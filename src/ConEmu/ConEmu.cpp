@@ -4571,7 +4571,7 @@ void CConEmuMain::DeleteVConMainThread(CVirtualConsole* apVCon)
 // abRecreate: TRUE - пересоздать текущую, FALSE - создать новую
 // abConfirm:  TRUE - показать диалог подтверждения
 // abRunAs:    TRUE - под админом
-bool CConEmuMain::RecreateAction(RecreateActionParm aRecreate, BOOL abConfirm, RConBoolArg bRunAs /*= crb_Undefined*/)
+bool CConEmuMain::RecreateAction(RecreateActionParm aRecreate, BOOL abConfirm, RConBoolArg bRunAs /*= crb_Undefined*/, UINT splitDir /*= 0*/)
 {
 	bool bExecRc = false;
 	FLASHWINFO fl = {sizeof(FLASHWINFO)}; fl.dwFlags = FLASHW_STOP; fl.hwnd = ghWnd;
@@ -4591,6 +4591,14 @@ bool CConEmuMain::RecreateAction(RecreateActionParm aRecreate, BOOL abConfirm, R
 
 	args.aRecreate = aRecreate;
 	args.RunAsAdministrator = bRunAs;
+	
+	if (splitDir == args.eSplitHorz) {
+		args.eSplit = args.eSplitHorz;
+	}
+
+	if (splitDir == args.eSplitVert) {
+		args.eSplit = args.eSplitVert;
+	}
 
 	WARNING("При переходе на новую обработку кнопок больше не нужно");
 	//if (!abConfirm && isPressed(VK_SHIFT))

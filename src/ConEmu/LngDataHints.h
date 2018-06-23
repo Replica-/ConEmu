@@ -436,6 +436,8 @@ static LngPredefined gsDataHints[] = {
 	{ vkShowTabBar,            L"Show tab bar" },
 	{ vkShowTabsList,          L"Show opened tabs list (ignored in Far - use macro instead)" },
 	{ vkShowTabsList2,         L"Show opened tabs list (works in Far too)" },
+	{ vkSplitHorizontally,     L"Split Horizontally: Create new window (‘Create confirmation’ dialog)" },
+	{ vkSplitVertically,       L"Split Vertically: Create new window (‘Create confirmation’ dialog)" },
 	{ vkSplitFocusDown,        L"Split: Put focus to nearest pane downward" },
 	{ vkSplitFocusLeft,        L"Split: Put focus to nearest pane leftward" },
 	{ vkSplitFocusRight,       L"Split: Put focus to nearest pane rightward" },

@@ -370,6 +370,10 @@ int ConEmuHotKeyList::AllocateHotkeys()
 		;
 	Add(vkShowTabsList2,  chk_User,  NULL,    L"Multi.ShowTabsList2",   CConEmuCtrl::key_GuiMacro, false, L"Tabs(8)")
 		->SetHotKey(VK_F12,VK_APPS);
+	Add(vkSplitHorizontally, chk_User, NULL,  L"Multi.NewConsoleShift2", CConEmuCtrl::key_GuiMacro, false, L"Create(0,1,0,1)")
+		->SetHotKey('W', VK_LWIN);
+	Add(vkSplitVertically, chk_User, NULL,    L"Multi.NewConsoleShift3", CConEmuCtrl::key_GuiMacro, false, L"Create(0,1,0,2)")
+		->SetHotKey('Q', VK_LWIN);
 	Add(vkPasteText,      chk_User,  NULL,    L"ClipboardVkAllLines",   CConEmuCtrl::key_PasteText)
 		->SetHotKey('V',VK_CONTROL);
 	Add(vkPasteFirstLine, chk_User,  NULL,    L"ClipboardVkFirstLine",  CConEmuCtrl::key_PasteFirstLine)

@@ -2732,6 +2732,7 @@ LPWSTR ConEmuMacro::Recreate(GuiMacro* p, CRealConsole* apRCon, bool abFromPlugi
 	RecreateActionParm Action = gpSetCls->GetDefaultCreateAction();
 	bool Confirm = gpSet->isMultiNewConfirm;
 	RConBoolArg AsAdmin = crb_Undefined;
+	UINT SplitDir = 0;
 
 	int i = 0;
 	if (p->GetIntArg(0, i))
@@ -2742,9 +2743,16 @@ LPWSTR ConEmuMacro::Recreate(GuiMacro* p, CRealConsole* apRCon, bool abFromPlugi
 			Confirm = (i != 0);
 		if (p->GetIntArg(2, i))
 			AsAdmin = i ? crb_On : crb_Off;
+		if (p->GetIntArg(3, i))
+			if (i == 1) {
+				SplitDir = 1;
+			}
+			else if (i == 2) {
+				SplitDir = 2;
+			}
 	}
 
-	LPWSTR pszRc = gpConEmu->RecreateAction(Action, Confirm, AsAdmin)
+	LPWSTR pszRc = gpConEmu->RecreateAction(Action, Confirm, AsAdmin, SplitDir)
 		? lstrdup(L"CREATED")
 		: lstrdup(L"FAILED");
 	return pszRc;

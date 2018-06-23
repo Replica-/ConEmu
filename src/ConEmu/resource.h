@@ -751,6 +751,8 @@
 #define vkFontLarger                    2453
 #define vkFontSmaller                   2454
 #define vkShowTabsList2                 2455
+#define vkSplitHorizontally             2456
+#define vkSplitVertically               2457
 #define cbClipStartBlockSelection       2458
 #define cbClipStartTextSelection        2459
 #define lbClipStartBlockSelection       2460
