@@ -1,3 +1,10 @@
+## About this fork
+
+This fork simply creates two new shortcuts and extends the create macro
+* Window+Q Split window Horizontally and show new dialog window
+* Window+W Split window Vertically and show new dialog window
+* Macro Create 4th arguement is now split direction
+
 ## About ConEmu
 [ConEmu-Maximus5](https://conemu.github.io) is a Windows console emulator with tabs, which represents
 multiple consoles as one customizable GUI window with various features.
